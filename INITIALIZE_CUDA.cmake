@@ -67,7 +67,7 @@ endmacro()
 
 function(goofit_add_library GNAME)
   add_library(${GNAME} STATIC ${ARGN})
-  if(NOT GOOFIT_DEVICE STREQUAL CUDA)
+  if(NOT DEVICE STREQUAL CUDA)
     SET_SOURCE_FILES_PROPERTIES(${ARGN} PROPERTIES LANGUAGE CXX)
     target_compile_options(${GNAME} PUBLIC -x c++)
   endif()
